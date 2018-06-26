@@ -2,28 +2,39 @@ class Robot:
     #attributs de la classe Robot : Coordonnees x et y ainsi que le nb de coups joues
     x = 0
     y = 0
+    symbole = 'R'
     nbCoups = 0
 
-    def __init__(self, x, y, nb = 0):
+    def __init__(self, x, y, s = 'R', nb = 0):
         #initialise le robot a x et y avec eventuellement nb coups deja portes
         self.x = x
         self.y = y
+        self.symbole = s
         self.nbCoups = nb
 
+    @property
     def getX(self):
         return self.x
-
+    @property
     def getY(self):
         return self.y
-
+    @property
+    def getSymb(self):
+        return self.symbole
+    @property
     def getNb(self):
         return self.nbCoups
 
 
-
-    def __setattr__(self, key, value):
-        self.key = value
-
+    @property
+    def setX(self, x):
+        self.x = x
+    @property
+    def setY(self, y):
+        self.y = y
+    @property
+    def setSymb(self, s):
+        self.symbole = s
 
 
     def __str__(self):
